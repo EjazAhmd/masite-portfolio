@@ -1,0 +1,62 @@
+.header {
+  background-color: transparent;
+}
+
+.topnav {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin: 75px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0px 4px 12px -8px #888;
+}
+.siteTitle {
+  margin: 0;
+  padding: 0 20px;
+  font-size: 24px;
+  color: var(--primary-font-color);
+}
+.customButton
+  {
+    width: auto;
+    padding: 15px,20px;
+    border: none;
+    background-color: #5B63D3;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+
+  }
+  .customButton :hover {
+    color: #e8e8e8;
+  
+  }
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navList > li > a {
+  padding: 10px;
+  color: var(--primary-font-color);
+  font-weight: bold;
+}
+.navList > li > a {
+  padding: 10px;
+  font-weight: bold;
+  transition: color 0.3s ease; 
+}
+
+.navList > li > a:hover {
+  opacity: 0.8; 
+}
+

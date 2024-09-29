@@ -1,0 +1,55 @@
+.navContainer {
+  display: flex;
+  min-height: 100vh; 
+}
+
+.mainLayout {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.contentContainer {
+  padding: 24px;
+  margin-left: 300px;
+  background: #f0f2f5;
+  flex: 1; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.section{
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px; 
+    margin-left: 300px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.section {
+  margin-bottom: 16px;
+  padding: 16px; 
+  border: 1px solid #d9d9d9; 
+  border-radius: 4px; 
+  background-color: #fafafa; 
+}
+
+.customInput {
+  width: 100%;
+}
+
+.customButton {
+  margin-top: 16px;
+}

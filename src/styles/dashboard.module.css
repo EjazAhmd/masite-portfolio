@@ -1,0 +1,15 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mainLayout {
+  flex-grow: 1;
+}
+
+.header {
+  padding: 0; 
+  border-radius: 10px; 
+}
+
+

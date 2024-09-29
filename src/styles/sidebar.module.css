@@ -1,0 +1,30 @@
+
+.sidebarContainer {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userName {
+  margin-bottom: 0;
+}
+
+.userEmail {
+  font-size: 12px;
+}
+
+.menu {
+  border-right: 0;
+}

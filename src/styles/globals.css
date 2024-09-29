@@ -1,0 +1,79 @@
+body
+{
+    background-color: #DDDBDB;
+    margin: 0;
+}
+label[for="nav-toggle"] {
+  position: absolute;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+label[for="nav-footer-toggle"] {
+  position: absolute;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+footer > div
+{
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+footer > div > ul
+{
+    display: flex;
+    gap: 10px;
+}
+footer a
+{
+    color: #666;
+}
+ul
+{
+  list-style-type: none;
+}
+:root {
+  --background-color: #f0f0f5;
+  --primary-font-color: #273469;
+  --secondary-font-color: #4b5d67;
+  --primary-font-family: 'Roboto', sans-serif;
+  --secondary-font-family: 'Arial', sans-serif;
+}
+
+/* Ensure body background is only affected by the background color */
+body {
+  background-color: var(--background-color);
+}
+
+/* Apply font styles to the username and other text areas */
+.username {
+  color: var(--primary-font-color);
+  font-family: var(--primary-font-family);
+}
+
+.nav-item {
+  color: var(--secondary-font-color);
+  font-family: var(--secondary-font-family);
+}
+
+.siteDesignContainer {
+  background-color: white; /* Ensure the container has a fixed background */
+}
+
+.customButton {
+  /* Add custom styling for button based on accent color */
+  background-color: var(--accent-color);
+}
