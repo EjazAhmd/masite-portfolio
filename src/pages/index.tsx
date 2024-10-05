@@ -5,7 +5,6 @@ import styles from "@/styles/Home.module.css";
 import { useEffect } from "react";
 import { getSession } from 'next-auth/react';
 import { useSession } from "next-auth/react";
-import { GetServerSidePropsContext } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     console.log(session, 'user session');
     console.log(status, 'status')
-  }, []);
+  }, [session, status]);
   return (
     <>
       <Head>

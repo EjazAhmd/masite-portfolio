@@ -35,14 +35,12 @@
 }
 
 .colorPicker {
-  width: 20px; 
-  height: 20px;
-  border-radius: 50%; 
-  border: none; 
+  width: 100%; /* Make it responsive */
+  height: 36px; /* Adjust height */
+  border-radius: 5px; 
+  border: 1px solid #d9d9d9; 
   cursor: pointer; 
 }
-
-
 
 .fontPicker {
   margin-bottom: 16px; 
@@ -59,19 +57,14 @@
 .customButton {
   width: auto;
   margin-left: 15px;
-  padding: 15px,20px;
+  padding: 15px 20px; /* Fixed padding syntax */
   border: none;
   background-color: #5B63D3;
   border-radius: 50px;
-  color:white;
+  color: white;
   font-weight: bold;
-
-}
-.customButton :hover {
-  color: #e8e8e8;
-
 }
 
-
-
-
+.customButton:hover {
+  background-color: #4a54b0; /* Darker shade on hover */
+}

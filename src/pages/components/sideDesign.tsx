@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useColors } from '../colorcontex';
 import styles from '../../styles/sideDesign.module.css';
-import { Button } from 'antd';
+import { Button, ColorPicker } from 'antd'; 
+import { useColors } from '../colorcontex';
+
 
 const SiteDesign: React.FC = () => {
   const {
@@ -17,9 +18,7 @@ const SiteDesign: React.FC = () => {
     setSecondaryFontColor,
     setPrimaryFontFamily,
     setSecondaryFontFamily,
-
   } = useColors();
-
 
   useEffect(() => {
     const root = document.documentElement;  
@@ -47,38 +46,34 @@ const SiteDesign: React.FC = () => {
         <ul className={styles.colorList}>
           <li>
             <span>Accent</span>
-            <input
-              type="color"
-              value={accentColor}
-              onChange={(e) => setAccentColor(e.target.value)}
-              className={styles.colorPicker}
+            <ColorPicker
+              value={accentColor} 
+              onChange={(color) => setAccentColor(color.toHexString())} // Use toHexString() for compatibility
+               
             />
           </li>
           <li>
             <span>Background</span>
-            <input
-              type="color"
+            <ColorPicker
               value={backgroundColor}
-              onChange={(e) => setBackgroundColor(e.target.value)}
-              className={styles.colorPicker}
+              onChange={(color) => setBackgroundColor(color.toHexString())}
+              
             />
           </li>
           <li>
             <span>Primary Font Color</span>
-            <input
-              type="color"
+            <ColorPicker
               value={primaryFontColor}
-              onChange={(e) => setPrimaryFontColor(e.target.value)}
-              className={styles.colorPicker}
+              onChange={(color) => setPrimaryFontColor(color.toHexString())}
+              
             />
           </li>
           <li>
             <span>Secondary Font Color</span>
-            <input
-              type="color"
+            <ColorPicker
               value={secondaryFontColor}
-              onChange={(e) => setSecondaryFontColor(e.target.value)}
-              className={styles.colorPicker}
+              onChange={(color) => setSecondaryFontColor(color.toHexString())}
+              
             />
           </li>
         </ul>

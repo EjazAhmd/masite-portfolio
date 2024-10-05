@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
+
 type ColorContextType = {
   accentColor: string;
   backgroundColor: string;
@@ -43,7 +44,6 @@ export const ColorProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [secondaryFontFamily, setSecondaryFontFamily] = useState(defaultColors.secondaryFontFamily);
 
   return (
-    
     <ColorContext.Provider
       value={{
         accentColor,
@@ -60,8 +60,9 @@ export const ColorProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         setSecondaryFontFamily,
       }}
     >
+
+      
       {children}
     </ColorContext.Provider>
   );
 };
-
