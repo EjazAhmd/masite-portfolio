@@ -1,5 +1,4 @@
-// pages/api/auth/[...nextauth].ts
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions, SessionStrategy } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -7,7 +6,7 @@ import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
         CredentialsProvider({
@@ -35,18 +34,18 @@ export const authOptions = {
                         },
                     });
 
-                    if (!userWithPassword) {
-                        console.log('User not found!');
+                    if (!userWithPassword || !userWithPassword.password) {
+                        console.log('User not found or password is null!');
                         return null;
                     }
 
-                    const compareResult = bcrypt.compareSync(credentials.password, userWithPassword.password);
+                    const compareResult = await bcrypt.compare(credentials.password, userWithPassword.password);
                     if (compareResult) {
                         console.log('Passwords match! User authenticated.');
                         return {
                             id: userWithPassword.id,
-                            name: userWithPassword.name,
-                            email: userWithPassword.email,
+                            name: userWithPassword.name || "Anonymous", // Ensure name is not null
+                            email: userWithPassword.email || "",         // Ensure email is not null
                         };
                     } else {
                         console.log('Passwords do not match! Authentication failed.');
@@ -60,10 +59,10 @@ export const authOptions = {
         })
     ],
     session: {
-        strategy: "jwt",
+        strategy: "jwt" as SessionStrategy,  // Use the correct type here
     },
     callbacks: {
-        async session({ session, token }) {
+        async session({ session, token }: { session: any; token: any }) {  // Explicitly typing session and token
             if (token) {
                 session.user = {
                     id: token.sub,
@@ -73,7 +72,7 @@ export const authOptions = {
             }
             return session;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user }: { token: any; user?: any }) {  // Typing jwt params
             if (user) {
                 token.id = user.id;
                 token.name = user.name;

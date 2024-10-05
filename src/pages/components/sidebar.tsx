@@ -1,9 +1,6 @@
 import React from 'react';
-import { Layout, Menu, Avatar, Typography } from 'antd';
-import {
-  AppstoreOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+import { Layout, Menu, Typography } from 'antd';
+import { AppstoreOutlined, UserOutlined } from '@ant-design/icons';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router'; // Import useRouter
 import styles from '../../styles/sidebar.module.css';  
@@ -19,9 +16,9 @@ const Sidebar: React.FC = () => {
     <Sider width={250} className={styles.sidebarContainer} theme='light'>
       <div className={styles.userProfile}>
         <img
-          size={40}
           src={session?.user?.image || '/public/img/markkk-logo.png'}
-          className={styles.img}
+          className={styles.img} // You can control the size via CSS
+          alt="User Profile" // Add alt text for accessibility
         />
         <div className={styles.userInfo}>
           <Text strong className={styles.userName}>

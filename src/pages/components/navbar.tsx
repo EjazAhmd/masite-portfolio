@@ -24,11 +24,12 @@ const Nav: React.FC<NavProps> = ({ accentColor, primaryFontFamily, secondaryFont
                     <div></div>
                 </div>
                 <h2
-                    className={styles.siteTitle}
-                    style={{ color: primaryFontColor, fontFamily: primaryFontFamily }}
+                 className={styles.siteTitle}
+                 style={{ color: primaryFontColor, fontFamily: primaryFontFamily }}
                 >
-                    {session?.user?.name.toUpperCase()}
-                </h2>
+                 {session?.user?.name ? session.user.name.toUpperCase() : "Anonymous"}
+               </h2>
+
                 <ul className={styles.navList}>
                     <li><a href="#About" style={{ color: secondaryFontColor, fontFamily: secondaryFontFamily }}>About</a></li>
                     <li><a href="#Article" style={{ color: secondaryFontColor, fontFamily: secondaryFontFamily }}>Articles</a></li>
